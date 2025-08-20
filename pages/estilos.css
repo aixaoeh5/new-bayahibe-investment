@@ -1,0 +1,364 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px 15px;
+}
+
+/* Layout principal en desktop */
+@media (min-width: 768px) {
+  .slider-imagenes,
+  .info-propiedad {
+    width: 48%;
+  }
+
+  .contenedor-propiedad {
+    display: flex;
+    gap: 4%;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+
+  .slider-img {
+    height: auto;
+    max-height: 380px;
+    object-fit: cover;
+  }
+
+  .botones-accion {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  .btn-contacto,
+  .btn-compartir {
+    width: auto;
+    min-width: 150px;
+  }
+}
+
+/* Header */
+.header-propiedad {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.header-propiedad h1 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #444;
+}
+
+.btn-volver {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+  color: #555;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+}
+
+.btn-volver:hover {
+  color: #000;
+}
+
+/* Slider de imágenes */
+.slider-imagenes {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.slider {
+  position: relative;
+}
+
+.slider-img {
+  width: 100%;
+  display: none;
+  border-radius: 15px;
+}
+
+.slider-img.activa {
+  display: block;
+}
+
+.flecha {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.452);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.flecha.izquierda {
+  left: 10px;
+  color: #3b3b3b;
+}
+
+.flecha.derecha {
+  right: 10px;
+  color: #3b3b3b;
+}
+
+/* Info propiedad */
+.info-propiedad {
+  margin-top: 10px;
+}
+
+.titulo-propiedad {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.ubicacion {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.descripcion {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #444;
+  text-align: justify;
+}
+
+/* Características */
+.caracteristicas {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.caracteristicas li {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Precio */
+.precio {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+/* Botones */
+.botones-accion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-contacto,
+.btn-compartir {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  color: #444;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  width: 100%;
+}
+
+.btn-contacto:hover,
+.btn-compartir:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: #f2f2f2;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s ease;
+}
+
+.cerrar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.lightbox-flecha {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.452);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  z-index: 10000;
+}
+
+.lightbox-flecha.izquierda {
+  left: 30px;
+}
+
+.lightbox-flecha.derecha {
+  right: 30px;
+}
+
+.lightbox-flecha i {
+  color: #444;
+}
+
+@media (min-width: 768px) {
+  .slider-imagenes {
+    margin-top: 0; 
+  }
+
+  .info-propiedad {
+    text-align: left;
+  }
+
+  body {
+    padding: 0;
+  }
+}
+
+.contenedor-propiedad {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .contenedor-propiedad {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .contenedor-propiedad {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    align-items: center;
+  }
+
+  .slider-imagenes {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .slider-img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .info-propiedad {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 10px;
+  }
+
+  .titulo-propiedad,
+  .descripcion,
+  .caracteristicas,
+  .precio,
+  .botones-accion {
+    text-align: left;
+  }
+
+  .descripcion {
+    text-align: justify;
+  }
+
+  .botones-accion {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-contacto,
+  .btn-compartir {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn-volver {
+    left: 60px;
+    top: 20px;
+      font-size: 1.5rem;
+  padding: 12px 16px;
+  }
+}

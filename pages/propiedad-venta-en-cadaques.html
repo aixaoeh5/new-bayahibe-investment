@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apartamento en Cadaques | Bayahibe Investment</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<header class="header-propiedad">
+  <a href="../venta.html" class="btn-volver"><i class="fas fa-arrow-left"></i></a>
+</header>
+
+<!-- CONTENEDOR PARA ESCRITORIO -->
+<div class="contenedor-propiedad">
+
+  <!-- SLIDER DE IMÁGENES -->
+  <section class="slider-imagenes">
+    <div class="slider">
+    <img src="../propieties/cadaques-1.jpeg" alt="Imagen 1" class="slider-img activa">
+    <img src="../propieties/cadaques-2.jpeg" alt="Imagen 2" class="slider-img">
+    <img src="../propieties/cadaques-3.jpeg" alt="Imagen 3" class="slider-img">
+    <img src="../propieties/cadaques-4.jpeg" alt="Imagen 3" class="slider-img">
+    <img src="../propieties/cadaques-5.jpeg" alt="Imagen 3" class="slider-img">
+      <button class="flecha izquierda"><i class="fas fa-chevron-left"></i></button>
+      <button class="flecha derecha"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- INFO DE LA PROPIEDAD-->
+  <section class="info-propiedad">
+    <h1 class="titulo-propiedad">Apartamento en Cadaques</h1>
+    <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> Bayahibe</p>
+    <p class="descripcion">
+    Oportunidad única de adquirir un elegante apartamento ubicado en Cadaqués Caribe, uno de los complejos turísticos y residenciales más reconocidos de la zona de Dominicus, Bayahibe. Este desarrollo tipo resort combina el lujo, la comodidad y el estilo mediterráneo en un entorno paradisíaco frente al mar Caribe.
+
+Cadaqués ofrece una experiencia inigualable con acceso directo a la playa privada, amplias áreas verdes, piscinas, restaurantes, capilla, parque acuático, gimnasio y seguridad 24/7. Todo dentro de un entorno cuidado y exclusivo, ideal tanto para el descanso como para vivir o invertir.
+
+Gracias a su alta demanda turística durante todo el año, esta propiedad representa una excelente opción de inversión. La ocupación constante, impulsada por la belleza natural de la zona, su cercanía a playas espectaculares y la calidad del complejo, garantiza un alto potencial de rentabilidad tanto en alquileres a corto como a largo plazo.
+
+Invertir en Cadaqués es asegurar un lugar privilegiado en el Caribe, con todas las comodidades de un resort de primer nivel.
+    </p>
+    <ul class="caracteristicas">
+      <li><i class="fas fa-bed"></i> 1 habitación</li>
+      <li><i class="fas fa-bath"></i> 1 baño</li>
+    </ul>
+    <p class="precio">$350,000 USD</p>
+    <div class="botones-accion">
+      <a href="https://wa.me/18094589297" target="_blank" class="btn-contacto">
+        <i class="fab fa-whatsapp"></i> Contactar
+      </a>
+      <button class="btn-compartir" onclick="copiarLink()">
+        <i class="fas fa-share-alt"></i> Compartir
+      </button>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="cerrar" onclick="cerrarLightbox()">&times;</span>
+  <button class="lightbox-flecha izquierda" onclick="cambiarImagen(-1)"><i class="fas fa-chevron-left"></i></button>
+  <img id="lightbox-img" src="" alt="Vista ampliada" />
+  <button class="lightbox-flecha derecha" onclick="cambiarImagen(1)"><i class="fas fa-chevron-right"></i></button>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+  const imagenes = document.querySelectorAll('.slider-img');
+  let indice = 0;
+
+  document.querySelector('.derecha').onclick = () => {
+    imagenes[indice].classList.remove('activa');
+    indice = (indice + 1) % imagenes.length;
+    imagenes[indice].classList.add('activa');
+  };
+
+  document.querySelector('.izquierda').onclick = () => {
+    imagenes[indice].classList.remove('activa');
+    indice = (indice - 1 + imagenes.length) % imagenes.length;
+    imagenes[indice].classList.add('activa');
+  };
+
+  function copiarLink() {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+      alert("¡Enlace copiado!");
+    });
+  }
+
+  let imagenesSlider = Array.from(document.querySelectorAll('.slider-img'));
+  let indiceLightbox = 0;
+
+  imagenesSlider.forEach((img, i) => {
+    img.addEventListener('click', () => {
+      indiceLightbox = i;
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').style.display = 'flex';
+    });
+  });
+
+  function cerrarLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+
+  function cambiarImagen(direccion) {
+    indiceLightbox = (indiceLightbox + direccion + imagenesSlider.length) % imagenesSlider.length;
+    document.getElementById('lightbox-img').src = imagenesSlider[indiceLightbox].src;
+  }
+</script>
+
+</body>
+</html>

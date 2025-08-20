@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Bayahibe Investment</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <nav class="nav-desktop">
+      <a href="venta.html">Venta</a>
+      <a href="#alquiler">Alquiler</a>
+      <a href="#contacto">Contáctanos</a>
+    </nav>
+
+    <!-- BOTÓN HAMBURGUESA -->
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <div id="overlay"></div>
+
+  <!-- CATALOGO -->
+  <div id="sidebar">
+    <ul> 
+      <li><a href="venta.html">Venta</a></li>
+      <li><a href="#alquiler">Alquiler</a></li>
+      <li><a href="#contacto">Contáctanos</a></li>
+    </ul>
+  </div>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- VIDEO MOBILE -->
+  <video autoplay muted loop playsinline class="hero-video mobile-video">
+    <source src="./assets/video-mobile.mp4" type="video/mp4" />
+    Tu navegador no soporta el video HTML5.
+  </video>
+
+  <!-- VIDEO DESKTOP -->
+  <video autoplay muted loop playsinline class="hero-video desktop-video">
+    <source src="./assets/video-desktop.mp4" type="video/mp4" />
+    Tu navegador no soporta el video HTML5.
+  </video>
+
+  <div class="overlay">
+    <h1>BAYAHIBE<br><span>INVESTMENT</span></h1>
+    <a href="#quienes-somos" class="btn-hero">DESCUBRIR</a>
+  </div>
+</section>
+
+
+  <!-- ¿QUIÉNES SOMOS? -->
+  <section class="quienes-somos" id="quienes-somos">
+    <h2>¿QUIÉNES SOMOS?</h2>
+    <p>
+      En Bayahibe Investment, nos especializamos en brindar soluciones integrales dentro del sector inmobiliario, con un enfoque completamente personalizado que se adapta a las necesidades, objetivos y sueños de cada cliente. <br><br>
+      Contamos con un extenso portafolio de propiedades tanto residenciales como comerciales, que incluye desde modernos apartamentos y acogedoras casas, hasta locales estratégicos y terrenos con gran potencial de inversión, ubicados en las zonas más privilegiadas de la región.
+    </p>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios" id="servicios">
+    <div class="servicio">
+      <img src="./assets/vector-1.svg" alt="Asesoramiento personalizado" />
+      <p>Asesoramiento personalizado</p>
+    </div>
+    <div class="servicio">
+      <img src="./assets/vector-2.svg" alt="Gestión inmobiliaria" />
+      <p>Gestión inmobiliaria</p>
+    </div>
+    <div class="servicio">
+      <img src="./assets/vector-3.svg" alt="Airbnb" />
+      <p>Gestión de propiedades para Airbnb</p>
+    </div>
+    <div class="servicio">
+      <img src="./assets/vector-4.svg" alt="Venta y alquiler" />
+      <p>Venta y alquiler de Propiedades</p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <h2>CONTÁCTANOS</h2>
+    <div class="contacto">
+      <form action="https://formspree.io/f/xwpozjkk" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre completo" required />
+        <input type="email" name="email" placeholder="E-mail" required />
+        <input type="tel" name="telefono" placeholder="Número de teléfono" required />
+        <button type="submit">Aceptar</button>
+      </form>
+
+      <hr />
+
+      <div class="datos-contacto">
+        <p><strong>Contacto</strong><br />
+          sunway.realestate.rd@gmail.com<br />
+          +(809) 458-9297
+        </p>
+      </div>
+
+      <div class="redes-sociales">
+        <a href="https://www.instagram.com/bayahibe_investment_rd" target="_blank">
+          <img src="assets/instagram.svg" alt="Instagram" />
+        </a>
+        <a href="https://www.facebook.com/massimo.guidi.35" target="_blank">
+          <img src="assets/facebook.svg" alt="Facebook" />
+        </a>
+        <a href="https://wa.me/18094589297?text=Hola%20Bayahibe%20Investment%2C%20quiero%20más%20información" target="_blank">
+          <img src="assets/whatsapp.svg" alt="WhatsApp" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER MOBILE -->
+  <footer class="footer-mobile">
+    <p>© 2025 Bayahibe Investment - All rights reserved - Developed &amp; Designed by OURO TECH</p>
+  </footer>
+
+  <!-- FOOTER DESKTOP -->
+  <footer class="footer-desktop">
+    <div class="footer-container">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="./assets/logo.png" alt="Bayahibe Logo">
+      </div>
+
+      <!-- Categorías -->
+      <div class="footer-categorias">
+        <p><strong>Categorías</strong></p>
+        <ul>
+          <li><a href="#quienes-somos">Acerca de</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="venta.html">Venta</a></li>
+          <li><a href="#alquiler">Alquiler</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="footer-redes">
+        <p><strong>Redes sociales</strong></p>
+        <ul>
+          <li><a href="#">Gmail</a></li>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Bayahibe Investment - All rights reserved - Developed &amp; Designed by OURO TECH</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const logo = document.getElementById('logo');
+
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+      logo.style.display = sidebar.classList.contains('active') ? 'none' : 'block';
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+      logo.style.display = 'block';
+    });
+
+    document.querySelectorAll('#sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        logo.style.display = 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>
+

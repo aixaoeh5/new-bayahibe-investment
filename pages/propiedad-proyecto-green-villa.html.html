@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto Green Villa | Bayahibe Investment</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<header class="header-propiedad">
+  <a href="../venta.html" class="btn-volver"><i class="fas fa-arrow-left"></i></a>
+</header>
+
+<!-- CONTENEDOR PARA ESCRITORIO -->
+<div class="contenedor-propiedad">
+
+  <!-- SLIDER DE IMÁGENES -->
+  <section class="slider-imagenes">
+    <div class="slider">
+     <img src="../propieties/green-villa-1.jpeg" alt="Imagen 1" class="slider-img activa">
+    <img src="../propieties/green-villa-2.jpeg" alt="Imagen 2" class="slider-img">
+    <img src="../propieties/green-villa-3.jpeg" alt="Imagen 3" class="slider-img">
+      <button class="flecha izquierda"><i class="fas fa-chevron-left"></i></button>
+      <button class="flecha derecha"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- INFO DE LA PROPIEDAD-->
+  <section class="info-propiedad">
+    <h1 class="titulo-propiedad">Proyecto Green Villa</h1>
+    <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> Bayahibe</p>
+    <p class="descripcion">
+Ubicado en una de las zonas más encantadoras del Caribe dominicano, este exclusivo proyecto en Bayahibe combina la tranquilidad de un entorno natural con un diseño arquitectónico moderno y funcional. Cada unidad ha sido cuidadosamente concebida para ofrecer espacios abiertos, ventilados y llenos de luz, creando un ambiente ideal para el descanso y la calidad de vida.
+
+Las residencias están diseñadas a partir de dos habitaciones en adelante, brindando opciones para parejas, familias o inversionistas que buscan propiedades espaciosas, cómodas y con excelente distribución.
+    </p>
+    
+    <div class="botones-accion">
+      <a href="https://wa.me/18094589297" target="_blank" class="btn-contacto">
+        <i class="fab fa-whatsapp"></i> Contactar
+      </a>
+      <button class="btn-compartir" onclick="copiarLink()">
+        <i class="fas fa-share-alt"></i> Compartir
+      </button>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="cerrar" onclick="cerrarLightbox()">&times;</span>
+  <button class="lightbox-flecha izquierda" onclick="cambiarImagen(-1)"><i class="fas fa-chevron-left"></i></button>
+  <img id="lightbox-img" src="" alt="Vista ampliada" />
+  <button class="lightbox-flecha derecha" onclick="cambiarImagen(1)"><i class="fas fa-chevron-right"></i></button>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+  const imagenes = document.querySelectorAll('.slider-img');
+  let indice = 0;
+
+  document.querySelector('.derecha').onclick = () => {
+    imagenes[indice].classList.remove('activa');
+    indice = (indice + 1) % imagenes.length;
+    imagenes[indice].classList.add('activa');
+  };
+
+  document.querySelector('.izquierda').onclick = () => {
+    imagenes[indice].classList.remove('activa');
+    indice = (indice - 1 + imagenes.length) % imagenes.length;
+    imagenes[indice].classList.add('activa');
+  };
+
+  function copiarLink() {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+      alert("¡Enlace copiado!");
+    });
+  }
+
+  let imagenesSlider = Array.from(document.querySelectorAll('.slider-img'));
+  let indiceLightbox = 0;
+
+  imagenesSlider.forEach((img, i) => {
+    img.addEventListener('click', () => {
+      indiceLightbox = i;
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').style.display = 'flex';
+    });
+  });
+
+  function cerrarLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+
+  function cambiarImagen(direccion) {
+    indiceLightbox = (indiceLightbox + direccion + imagenesSlider.length) % imagenesSlider.length;
+    document.getElementById('lightbox-img').src = imagenesSlider[indiceLightbox].src;
+  }
+</script>
+
+</body>
+</html>
